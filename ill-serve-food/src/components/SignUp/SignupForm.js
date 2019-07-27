@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
+
 class SignupForm extends React.Component{
     constructor(props){
         super(props);
@@ -18,9 +19,60 @@ class SignupForm extends React.Component{
     onChange(e){
         this.setState({[e.target.name]:e.target.value})
     }
+    /*validateInput(data){
+        let errors={};
+        if(Validator.isNull(data.email)){
+            errors.email='Email is required';
+        }
+        if(Validator.isEmail(data.email)){
+            errors.email='Email Taken'
+        }
+        if(Validator.isNull(data.username)){
+            errors.username='Username is required';
+        }
+
+        if(Validator.isNull(data.password)){
+            errors.password='Password is required';
+        }
+        if(Validator.isNull(data.passwordConfirmation)){
+            errors.passwordConfirmation='Password is required';
+        }
+        if(!Validator.equals(data.password,data.passwordConfirmation)){
+            errors.passwordConfirmation='Passwords Must Match';
+        }
+        return{
+            errors,
+            isValid: isEmpty(errors)
+        }
+    }
+      userSignupRequest(userData){
+    
+        return dispatch=>{
+            return axios.post('/',(req,res)=>{
+                const {erros,isValid}=validateInput(req.body);
+                if(!isValid){
+                    res.status(400).json(erros);
+                }
+            })
+        }
+    }
+    
+    isValid(){
+        const{errors,isaValid}= validateInput(this.state);
+        if(!Valid){
+            this.setState({errors});
+        }
+        return isValid;
+    }*/
     onSubmit(e){
         e.preventDefault();
-       this.props.userSignupRequest(this.state);
+       if(this.isValid()){
+           this.setState({errors:{},isLoading:true});
+           this.props.userSignupRequest(this.state).then(
+               ()=>{},
+               ({data})=>this.setState({errors:data,isLoading:false})
+           );
+       }
     }
     render(){
         return(
