@@ -7,7 +7,7 @@ import Home from '../components/Home/Home.js';
 class DataCon extends React.Component{
     render(){
         return(
-            <Home data={this.props.data}></Home>
+            <Home  ></Home>
         )
     }
 }

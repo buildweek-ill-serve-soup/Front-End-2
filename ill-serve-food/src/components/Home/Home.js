@@ -4,8 +4,9 @@ import * as actionCreators from '../../actions/index.js';
 
 
 class Home extends React.Component{
-    componentDidMount
+    
     render(){
+        console.log(props)
         return(
             <div >
                 {this.props.data}
