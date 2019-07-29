@@ -14,14 +14,16 @@ class App extends React.Component{
     return(
       <div>
         <NavigationBar/>
-        <Route data={this.props.children} exact path='/'component={Home}/>
+        <Route exact path='/'component={Home}/>
         <Route path='/signup'component={SignupPage}/>
       </div>
     )
   }
 }
+
 const mapStateToProps=(state)=>{
   return state
 };
+// i thought this would add the props of atleast the inventory items to my app but i dont think it is
 export default connect (mapStateToProps,actionCreators)(App);
 

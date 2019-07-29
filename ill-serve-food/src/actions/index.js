@@ -8,6 +8,19 @@ export const DELETEING_DATA='DELETING_DATA';
 export const CREATING_DATA='CREATING_DATA';
 export const CREATE_DATA='CREATE_DATA';
 export const ERR='ERR';
+export const SHOW_INVENTORY='SHOW_INVENTORY';
+
+export const getData=()=>{
+  const data=axios.get('https://kitchen-soup-backend.herokuapp.com/api/users/items');
+    return dispatch=>{
+      dispatch({type:SHOW_INVENTORY});
+      data.then(response=>{
+        dispatch ({type:GET_DATA_SUCCESS,payload:response.data})
+      }).catch(err=>{
+        dispatch({type:ERR,payload:err})
+      })
+    }
+}
 
 /*const URL='https://kitchen-soup-backend.herokuapp.com/api/users/items'
 //get action type

@@ -1,3 +1,4 @@
+
 /*import {GET_DATA,GET_DATA_SUCCESS,CREATING_DATA,CREATE_DATA,ERR} from '../actions/getData.js';
 
 
@@ -29,8 +30,16 @@ export const dataReducer=(state=initialState,actiion)=>{
         return state;
   }
 }*/
+import {SHOW_INVENTORY} from '../actions/index.js';
+
 let defaultState={
   data:[]
+}
+export const dataReducer=(state=defaultState,action)=>{
+  switch(action.type){
+    case SHOW_INVENTORY:
+      return{...state,data:Response.data}
+  }
 }
 const mainReducer=(state=defaultState,action)=>{
   if(action.type==='SHOW_INVENTORY'){
