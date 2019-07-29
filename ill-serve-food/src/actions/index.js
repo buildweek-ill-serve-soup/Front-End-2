@@ -9,7 +9,7 @@ export const CREATING_DATA='CREATING_DATA';
 export const CREATE_DATA='CREATE_DATA';
 export const ERR='ERR';
 
-const URL='https://kitchen-soup-backend.herokuapp.com'
+/*const URL='https://kitchen-soup-backend.herokuapp.com/api/users/items'
 //get action type
 export const getData=()=>{
   // axios getting data
@@ -37,4 +37,17 @@ export const createData=data=>{
       dispatch({type:ERR,payload:err})
     });
   };
+}*/
+export function loadInventory(){
+  return(dispatch)=>{
+    return axios.get('https://kitchen-soup-backend.herokuapp.com/api/users/items').then((response)=>{
+      dispatch(showInventory(response.data))
+    })
+  }
+}
+export function showInventory(data){
+  return{
+    type:'SHOW_INVENTORY',
+    data:data
+  }
 }

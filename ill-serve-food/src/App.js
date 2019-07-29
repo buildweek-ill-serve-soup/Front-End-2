@@ -1,8 +1,11 @@
 import React from 'react';
-import NavigationBar from './components/Navigation.js';
-import SignupPage from './components/SignUp/SignupPage';
+import{connect}from'react-redux';
+import * as actionCreators from './actions/index.js';
 import { Route ,withRouter } from 'react-router-dom';
 import Home from './components/Home/Home';
+
+import NavigationBar from './components/Navigation.js';
+import SignupPage from './components/SignUp/SignupPage';
 
 
 class App extends React.Component{
@@ -11,11 +14,14 @@ class App extends React.Component{
     return(
       <div>
         <NavigationBar/>
-        <Route exact path='/'component={Home}/>
+        <Route data={this.props.children} exact path='/'component={Home}/>
         <Route path='/signup'component={SignupPage}/>
       </div>
     )
   }
 }
-export default App;
+const mapStateToProps=(state)=>{
+  return state
+};
+export default connect (mapStateToProps,actionCreators)(App);
 

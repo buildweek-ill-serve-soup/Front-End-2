@@ -1,4 +1,4 @@
-import {GET_DATA,GET_DATA_SUCCESS,CREATING_DATA,CREATE_DATA,ERR} from '../actions/getData.js';
+/*import {GET_DATA,GET_DATA_SUCCESS,CREATING_DATA,CREATE_DATA,ERR} from '../actions/getData.js';
 
 
 
@@ -28,4 +28,20 @@ export const dataReducer=(state=initialState,actiion)=>{
       default:
         return state;
   }
+}*/
+let defaultState={
+  data:[]
 }
+const mainReducer=(state=defaultState,action)=>{
+  if(action.type==='SHOW_INVENTORY'){
+    return{
+      ...state,
+      data:action.data
+    }
+  }else{
+    return{
+      ...state
+    }
+  }
+}
+export default mainReducer;
