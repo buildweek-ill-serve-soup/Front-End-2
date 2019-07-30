@@ -7,11 +7,11 @@ import Home from '../components/Home/Home.js';
 class DataCon extends React.Component{
     render(){
         return(
-            <Home  ></Home>
+            <Home handleClick={this.props.loadInventory} data={this.props.data}/>
         )
     }
 }
 const mapStateToProps=(state)=>{
     return state
 }
-export default connect(mapStateToProps,actioncreators)(DataCon);
+export default connect(mapStateToProps,actionCreators)(DataCon);

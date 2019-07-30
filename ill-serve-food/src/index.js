@@ -1,20 +1,18 @@
 import React from 'react';
-import {render}from'react-dom';
 import ReactDOM from 'react-dom';
-import App from './App';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider}from'react-redux';
 import thunk from 'redux-thunk';
 import {createStore,applyMiddleware}from'redux';
+
+
 import reducers from './reducers/index.js';
+import App from './App.js';
 
 
-
-let store=createStore(reducers,applyMiddleware(thunk))
-
-
-
-
+const store=createStore(
+  reducers,applyMiddleware(thunk)
+);
 
 ReactDOM.render(
       <Provider store={store}>

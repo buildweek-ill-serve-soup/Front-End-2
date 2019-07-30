@@ -30,27 +30,11 @@ export const dataReducer=(state=initialState,actiion)=>{
         return state;
   }
 }*/
-import {SHOW_INVENTORY} from '../actions/index.js';
+import {combineReducers}from'redux';
+import{inventoryReducer,userReducer}from'./inventoryReducer.js';
 
-let defaultState={
-  data:[]
-}
-export const dataReducer=(state=defaultState,action)=>{
-  switch(action.type){
-    case SHOW_INVENTORY:
-      return{...state,data:Response.data}
-  }
-}
-const mainReducer=(state=defaultState,action)=>{
-  if(action.type==='SHOW_INVENTORY'){
-    return{
-      ...state,
-      data:action.data
-    }
-  }else{
-    return{
-      ...state
-    }
-  }
-}
-export default mainReducer;
+
+export default combineReducers({
+  inventoryReducer,userReducer
+})
+

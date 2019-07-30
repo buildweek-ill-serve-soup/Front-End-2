@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-export const GET_DATA='GET_DATA';
+export const GETTING_DATA='GETTING_DATA';
 export const GET_DATA_SUCCESS='GET_DATA_SUCCESS';
+export const GET_DATA_FAILURE='GET_DATA_FAILURE';
+export const GETTING_USER='GETTING_USER';
+export const GET_USER_SUCCESS='GET_USER_SUCCESS';
+export const GET_USER_FAILURE='GET_USER_FAILURE';
 export const UPDATING_DATA='UPDATING_DATA';
 export const UPDATE_DATA_SUCCESS='UPDATE_DATA_SUCCESS';
 export const DELETEING_DATA='DELETING_DATA';
@@ -10,7 +14,35 @@ export const CREATE_DATA='CREATE_DATA';
 export const ERR='ERR';
 export const SHOW_INVENTORY='SHOW_INVENTORY';
 
-export const getData=()=>{
+export const getInventory=()=>dispatch=>{
+  dispatch({type:GETTING_DATA});
+  axios.get('https://kitchen-soup-backend.herokuapp.com/api/users/items')
+       .then(response=>{
+         console.log('res',response)
+         dispatch({type:GET_DATA_SUCCESS,payload:response.data.results});
+       })
+       .catch(err=>{
+         dispatch({type:GET_DATA_FAILURE,payload:err});
+       })
+}
+export const getUsers=()=>dispatch=>{
+  dispatch({type:GETTING_USER});
+  axios.get('https://kitchen-soup-backend.herokuapp.com/api/users')
+       .then(response=>{
+         console.log('res',response)
+         dispatch({type:GET_USER_SUCCESS,payload:response.data.results});
+       })
+       .catch(err=>{
+         dispatch({type:GET_USER_FAILURE,payload:err});
+       })
+}
+
+
+
+
+
+
+/*export const getData=()=>{
   const data=axios.get('https://kitchen-soup-backend.herokuapp.com/api/users/items');
     return dispatch=>{
       dispatch({type:SHOW_INVENTORY});
@@ -20,7 +52,7 @@ export const getData=()=>{
         dispatch({type:ERR,payload:err})
       })
     }
-}
+}*/
 
 /*const URL='https://kitchen-soup-backend.herokuapp.com/api/users/items'
 //get action type
@@ -51,16 +83,3 @@ export const createData=data=>{
     });
   };
 }*/
-export function loadInventory(){
-  return(dispatch)=>{
-    return axios.get('https://kitchen-soup-backend.herokuapp.com/api/users/items').then((response)=>{
-      dispatch(showInventory(response.data))
-    })
-  }
-}
-export function showInventory(data){
-  return{
-    type:'SHOW_INVENTORY',
-    data:data
-  }
-}

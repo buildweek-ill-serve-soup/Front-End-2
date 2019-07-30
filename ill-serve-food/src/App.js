@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 
 import NavigationBar from './components/Navigation.js';
 import SignupPage from './components/SignUp/SignupPage';
+import{InventoryListView}from'./views';
 
 
 class App extends React.Component{
@@ -15,16 +16,14 @@ class App extends React.Component{
     return(
       <div>
         <NavigationBar/>
+        <InventoryListView/>
         <Route exact path='/'component={Home}/>
         <Route path='/signup'component={SignupPage}/>
       </div>
     )
   }
 }
+export default App;
 
-const mapStateToProps=(state)=>{
-  return state
-};
-// i thought this would add the props of atleast the inventory items to my app but i dont think it is
-export default connect (mapStateToProps,actionCreators)(App);
+
 

@@ -6,10 +6,15 @@ import * as actionCreators from '../../actions/index.js';
 class Home extends React.Component{
     
     render(){
-        console.log(props)
+        console.log(this.props)
         return(
-            <div >
+            
+            <div className="Wrap">
+                
                 {this.props.data}
+                <div className="Inventory">
+                <button onClick={()=>{this.props.handleClick()}}>show inventory</button>
+                </div>
             </div>
         )
     }
