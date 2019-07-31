@@ -11,7 +11,7 @@ class Home extends React.Component{
             
             <div className="Wrap">
                 
-                {this.props.data}
+                {}
                 <div className="Inventory">
                 <button onClick={()=>{this.props.handleClick()}}>show inventory</button>
                 </div>
