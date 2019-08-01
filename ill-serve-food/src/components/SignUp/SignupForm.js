@@ -3,78 +3,41 @@ import PropTypes from 'prop-types';
 
 
 
+
 class SignupForm extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            username:'',
+            name:'',
             email:'',
             password:'',
-            passwordConfirmation:'',
-            state:''
+            role:'',
+            errors:{}
         }
         this.onChange=this.onChange.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
     }
+    //typing inputs function
     onChange(e){
         this.setState({[e.target.name]:e.target.value})
     }
-    /*validateInput(data){
-        let errors={};
-        if(Validator.isNull(data.email)){
-            errors.email='Email is required';
-        }
-        if(Validator.isEmail(data.email)){
-            errors.email='Email Taken'
-        }
-        if(Validator.isNull(data.username)){
-            errors.username='Username is required';
-        }
 
-        if(Validator.isNull(data.password)){
-            errors.password='Password is required';
-        }
-        if(Validator.isNull(data.passwordConfirmation)){
-            errors.passwordConfirmation='Password is required';
-        }
-        if(!Validator.equals(data.password,data.passwordConfirmation)){
-            errors.passwordConfirmation='Passwords Must Match';
-        }
-        return{
-            errors,
-            isValid: isEmpty(errors)
-        }
-    }
-      userSignupRequest(userData){
-    
-        return dispatch=>{
-            return axios.post('/',(req,res)=>{
-                const {erros,isValid}=validateInput(req.body);
-                if(!isValid){
-                    res.status(400).json(erros);
-                }
-            })
-        }
-    }
-    
-    isValid(){
-        const{errors,isaValid}= validateInput(this.state);
-        if(!Valid){
-            this.setState({errors});
-        }
-        return isValid;
-    }*/
+    //submit user function ERR 500 
     onSubmit(e){
+        this.setState({errors:{}});
         e.preventDefault();
-       if(this.isValid()){
-           this.setState({errors:{},isLoading:true});
-           this.props.userSignupRequest(this.state).then(
-               ()=>{},
-               ({data})=>this.setState({errors:data,isLoading:false})
-           );
+        
+        this.props.userSignupRequest(this.state).then(
+            ()=>{
+                this.context.router.push('/');
+            },
+            ({data})=>this.setState({errors:data})
+        );
+       
        }
-    }
+    
     render(){
+        
         return(
         <form onSubmit={this.onSubmit}>
                 <div>
@@ -82,35 +45,30 @@ class SignupForm extends React.Component{
                 </div>
                 <div className="form-group">
                    <input 
-                        value={this.state.username}
+                        value={this.state.name}
                         onChange={this.onChange}
-                        placeholder='Username'
-                        type="text"name='username'
-                        className='form-controll'/>
+                        placeholder='name'
+                        type="text"name='name'
+                        className='form-control'/>
                     <input 
                         value={this.state.email}
                         onChange={this.onChange}
                         placeholder='Email'
                         type="text"name='email'
-                        className='form-controll'/>
+                        className='form-control'/>
                     <input 
                         value={this.state.password}
                         onChange={this.onChange}
                         placeholder='Password'
                         type="text"name='password'
-                        className='form-controll'/>
+                        className='form-control'/>
                     <input 
-                        value={this.state.passwordConfirmation}
+                        value={this.state.role}
                         onChange={this.onChange}
-                        placeholder='Confirm Password'
-                        type="text"name='passwordConfirmation'
-                        className='form-controll'/>
-                    <input 
-                        value={this.state.state}
-                        onChange={this.onChange}
-                        placeholder='State'
-                        type="text"name='state'
-                        className='form-controll'/>
+                        placeholder='Role'
+                        type="text"name='role'
+                        className='form-control'/>
+                    
                 </div>
                 <div className='form-group'>
                         <button >
@@ -124,5 +82,8 @@ class SignupForm extends React.Component{
 
 SignupForm.propTypes={
     userSignupRequest: PropTypes.func.isRequired,
+}
+SignupForm.contextType={
+    router:PropTypes.object.isRequired
 }
 export default SignupForm;

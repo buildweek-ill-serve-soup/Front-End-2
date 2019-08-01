@@ -10,6 +10,9 @@ class NavigationBar extends React.Component{
                 <div className="NavContainer">
                     <a className="Nav" href='/signup'>Sign Up</a>
                 </div> 
+                <div className="NavContainer">
+                    <a className="Nav" href='/login'>Login</a>
+                </div>
             </div>
         )
     }

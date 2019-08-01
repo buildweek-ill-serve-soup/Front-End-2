@@ -46,7 +46,7 @@ export const getUsers=()=>dispatch=>{
        })
 }
 //post user action
-export const userSignup=user=>{
+/*export const userSignup=user=>{
   const newUser=axios.post(`${URL}/api/users/register`,user)
   return dispatch=>{
     dispatch({type:POST_NEW_USER});
@@ -56,7 +56,7 @@ export const userSignup=user=>{
       dispatch({type:ERR,payload:err})
     });
   };
-}
+}*/
 
 
 

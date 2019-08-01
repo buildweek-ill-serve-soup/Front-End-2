@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 
 import NavigationBar from './components/Navigation.js';
 import SignupPage from './components/SignUp/SignupPage';
+import LoginPage from './components/Login/LoginPage';
 import{InventoryListView}from'./views';
 
 
@@ -16,9 +17,10 @@ class App extends React.Component{
     return(
       <div>
         <NavigationBar/>
-        <InventoryListView/>
+        
         <Route exact path='/'component={Home}/>
         <Route path='/signup'component={SignupPage}/>
+        <Route path='/login'component={LoginPage}/>
       </div>
     )
   }
