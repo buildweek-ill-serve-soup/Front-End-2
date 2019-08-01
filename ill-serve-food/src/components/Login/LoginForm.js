@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect}from'react-redux';
-import{login}from'../../actions/loginAction';
+
 
 class LoginForm extends React.Component{
     constructor(props){
@@ -23,15 +22,17 @@ class LoginForm extends React.Component{
         
         this.props.login(this.state).then(
             ()=>{
-                this.context.router.push('/');
+                
+                
             },
             ({data})=>this.setState({errors:data})
         );
+        
        
        }
     render(){
         return(
-            <form>
+            <form onSubmit={this.onSubmit}>
                <h1>Login</h1>
                <input 
                         value={this.state.name}
@@ -57,7 +58,5 @@ class LoginForm extends React.Component{
 LoginForm.propTypes={
     login: PropTypes.func.isRequired,
 }
-LoginForm.contextTypes={
-    router:PropTypes.object.isRequired
-}
-export default connect(null,{login})(LoginForm);
+
+export default LoginForm;

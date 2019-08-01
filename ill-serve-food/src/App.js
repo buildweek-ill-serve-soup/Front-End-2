@@ -21,6 +21,7 @@ class App extends React.Component{
         <Route exact path='/'component={Home}/>
         <Route path='/signup'component={SignupPage}/>
         <Route path='/login'component={LoginPage}/>
+        <Route path='./inventory'component={InventoryListView}/>
       </div>
     )
   }

@@ -25,6 +25,7 @@ const mapStateToProps=state=>{
     return{
         data:state.inventoryReducer.data,
         fetching:state.inventoryReducer.fetching,
+        
     }
    
 }
