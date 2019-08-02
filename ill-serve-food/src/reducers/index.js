@@ -32,9 +32,9 @@ export const dataReducer=(state=initialState,actiion)=>{
 }*/
 import {combineReducers}from'redux';
 import{inventoryReducer,userReducer}from'./inventoryReducer.js';
-
+import auth from './authReducer.js';
 
 export default combineReducers({
-  inventoryReducer,userReducer
+  inventoryReducer,userReducer,auth
 })
 

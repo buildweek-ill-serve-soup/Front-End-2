@@ -1,14 +1,43 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Users from './Users';
 
-import Users from './Users.js';
 
-const UsersList=props=>{
-    return(
-        <ul>
-            {props.data.map(data=>{
-                return <Users data={data}/>;
-            })}
-        </ul>
-    )
+class UsersList extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            name:'',
+            email:'',
+            users:{},
+            errors:{}
+        }
+        
+    }
+      
+   
+
+    render(){
+        return(
+           
+               
+           <div>
+           <Users allUsers={this.state.name} />;
+            </div>
+            
+        )
+    }
 }
-export default UsersList;
+UsersList.propTypes={
+    allUsers: PropTypes.func.isRequired,
+}
+function mapStateToProps(state){
+    const {users}=state
+    return{usersList:state.name}
+}
+
+
+export default connect(mapStateToProps)(UsersList);
+
+

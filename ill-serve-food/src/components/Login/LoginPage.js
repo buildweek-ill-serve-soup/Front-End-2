@@ -2,7 +2,7 @@ import React from 'react';
 import LoginForm from './LoginForm';
 import PropTypes from 'prop-types';
 import {connect}from 'react-redux';
-import{login}from'../../actions/loginAction.js';
+import{login}from'../../actions/authActions';
 
 
 
@@ -25,7 +25,7 @@ class LoginPage extends React.Component{
                     <a className="Nav" href='/deleteUser'>Delete User</a>
                 </div>
                 <div className="NavContainer">
-                    <a className="Nav" href='/all users'>all users</a>
+                    <a className="Nav" href='/allUsers'>all users</a>
                 </div>
             </div>
         )

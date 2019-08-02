@@ -4,15 +4,24 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider}from'react-redux';
 import thunk from 'redux-thunk';
 import {createStore,applyMiddleware}from'redux';
+import jwt from 'jsonwebtoken';
+
 
 
 import reducers from './reducers/index.js';
 import App from './App.js';
+import setAuthorizationToken from './utils/setAuthorizationToken.js';
+import { setCurrentUser } from './actions/authActions.js';
 
 
 const store=createStore(
   reducers,applyMiddleware(thunk)
 );
+if(localStorage.jwtToken){
+  setAuthorizationToken(localStorage.jwtToken);
+  store.dispatch(setCurrentUser(jwt.decode(localStorage.jwtToken)));
+}
+setAuthorizationToken(localStorage.jwtToken);
 
 ReactDOM.render(
       <Provider store={store}>

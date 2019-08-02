@@ -59,6 +59,7 @@ export const getUsersById=()=>dispatch=>{
          dispatch({type:GET_USER_BY_ID_FAIL,payload:err});
        })
 }
+export const SET_CURRENT_USER='SET_CURRENT_USER';
 //post user action
 /*export const userSignup=user=>{
   const newUser=axios.post(`${URL}/api/users/register`,user)

@@ -1,7 +1,6 @@
 import React from 'react';
-import{connect}from'react-redux';
-import * as actionCreators from './actions/index.js';
-import { Route ,withRouter } from 'react-router-dom';
+
+import { Route } from 'react-router-dom';
 import Home from './components/Home/Home';
 
 import NavigationBar from './components/Navigation.js';
