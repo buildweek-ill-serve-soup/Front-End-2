@@ -8,6 +8,7 @@ import NavigationBar from './components/Navigation.js';
 import SignupPage from './components/SignUp/SignupPage';
 import LoginPage from './components/Login/LoginPage';
 import{InventoryListView}from'./views';
+import EditUserPage from './components/EditUser/EditUserPage.js';
 
 
 class App extends React.Component{
@@ -22,6 +23,7 @@ class App extends React.Component{
         <Route path='/signup'component={SignupPage}/>
         <Route path='/login'component={LoginPage}/>
         <Route path='./inventory'component={InventoryListView}/>
+        <Route path='./editUser'component={EditUserPage}/>
       </div>
     )
   }

@@ -15,6 +15,9 @@ class LoginPage extends React.Component{
                 <div className="NavContainer">
                     <a className="Nav" href='/inventory'>view inventory</a>
                 </div>
+                <div className="NavContainer">
+                    <a className="Nav" href='/editUser'>Edit User Information</a>
+                </div>
             </div>
         )
     }
