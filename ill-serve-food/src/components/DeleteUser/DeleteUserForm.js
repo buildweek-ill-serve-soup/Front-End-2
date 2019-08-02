@@ -22,7 +22,7 @@ class DeleteUserForm extends React.Component{
         this.setState({errors:{}});
         e.preventDefault();
         
-        this.props.editUser(this.state).then(
+        this.props.deleteUser(this.state).then(
             ()=>{
                 
                 

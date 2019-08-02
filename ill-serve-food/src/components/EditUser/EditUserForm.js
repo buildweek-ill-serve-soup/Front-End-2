@@ -35,10 +35,10 @@ class EditUserForm extends React.Component{
     render(){
         return(
             <form onSubmit={this.onSubmit}>
-                <div>
+                
                     <h1>Edit Info</h1>
-                </div>
-                <div className="form-group">
+                
+                
                    <input 
                         value={this.state.name}
                         onChange={this.onChange}
@@ -64,7 +64,7 @@ class EditUserForm extends React.Component{
                         type="text"name='role'
                         className='form-control'/>
                     
-                </div>
+               
                 <div className='form-group'>
                         <button >
                             Save Changes

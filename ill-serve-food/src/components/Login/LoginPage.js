@@ -3,7 +3,7 @@ import LoginForm from './LoginForm';
 import PropTypes from 'prop-types';
 import {connect}from 'react-redux';
 import{login}from'../../actions/loginAction.js';
-import {InventoryListView} from '../../views';
+
 
 
 class LoginPage extends React.Component{

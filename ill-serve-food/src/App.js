@@ -20,7 +20,8 @@ class App extends React.Component{
     return(
       <div>
         <NavigationBar/>
-        
+        <Route exact path='/editUser'component={EditUserPage}/>
+        <Route exact path='/deleteUser'component={DeleteUserPage}/>
         <Route exact path='/'component={Home}/>
         <Route path='/signup'component={SignupPage}/>
         <Route path='/login'component={LoginPage}/>
