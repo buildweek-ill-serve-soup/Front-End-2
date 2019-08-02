@@ -7,6 +7,9 @@ export const GET_DATA_FAILURE='GET_DATA_FAILURE';
 export const GETTING_USER='GETTING_USER';
 export const GET_USER_SUCCESS='GET_USER_SUCCESS';
 export const GET_USER_FAILURE='GET_USER_FAILURE';
+export const GET_USER_BY_ID='GET_USER_BY_ID';
+export const GET_USER_BY_ID_FAIL="GET_USER_BY_ID_FAIL";
+export const GET_USER_BY_ID_SUCCESS="GET_USER_BY_ID_SUCCESS";
 //post
 export const POST_NEW_USER='POST_NEW_USER';
 export const POST_USER_FAILURE='POST_USER_FAILURE';
@@ -43,6 +46,17 @@ export const getUsers=()=>dispatch=>{
        })
        .catch(err=>{
          dispatch({type:GET_USER_FAILURE,payload:err});
+       })
+}
+export const getUsersById=()=>dispatch=>{
+  dispatch({type:GET_USER_BY_ID});
+  axios.get('https://kitchen-soup-backend.herokuapp.com/api/users/:id')
+       .then(response=>{
+         console.log('res',response)
+         dispatch({type:GET_USER_BY_ID_SUCCESS,payload:response.data.results});
+       })
+       .catch(err=>{
+         dispatch({type:GET_USER_BY_ID_FAIL,payload:err});
        })
 }
 //post user action
