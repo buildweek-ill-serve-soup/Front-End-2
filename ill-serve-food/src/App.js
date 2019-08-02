@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import NavigationBar from './components/Navigation.js';
 import SignupPage from './components/SignUp/SignupPage';
 import LoginPage from './components/Login/LoginPage';
+import DeleteUserPage from './components/DeleteUser/DeleteUserPage';
 import{InventoryListView}from'./views';
 import UserByIdListView from'./views/userByIdListView';
 import EditUserPage from './components/EditUser/EditUserPage.js';
@@ -19,12 +20,13 @@ class App extends React.Component{
     return(
       <div>
         <NavigationBar/>
-        <UserByIdListView/>
+        
         <Route exact path='/'component={Home}/>
         <Route path='/signup'component={SignupPage}/>
         <Route path='/login'component={LoginPage}/>
         <Route path='./inventory'component={InventoryListView}/>
         <Route path='./editUser'component={EditUserPage}/>
+        <Route path='./deleteUser'component={DeleteUserPage}/>
       </div>
     )
   }
