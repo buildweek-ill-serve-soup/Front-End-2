@@ -18,6 +18,15 @@ class LoginPage extends React.Component{
                 <div className="NavContainer">
                     <a className="Nav" href='/editUser'>Edit User Information</a>
                 </div>
+                <div className="NavContainer">
+                    <a className="Nav" href='/userById'>user by id</a>
+                </div>
+                <div className="NavContainer">
+                    <a className="Nav" href='/deleteUser'>Delete User</a>
+                </div>
+                <div className="NavContainer">
+                    <a className="Nav" href='/all users'>all users</a>
+                </div>
             </div>
         )
     }
