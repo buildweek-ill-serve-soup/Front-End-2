@@ -10,7 +10,7 @@ import DeleteUserPage from './components/DeleteUser/DeleteUserPage';
 import UserByIdPage from './components/UserById/UserByIdPage';
 import UsersList from './components/AllUsers/UserList';
 import{InventoryListView}from'./views';
-import UserByIdListView from'./views/userByIdListView';
+
 import EditUserPage from './components/EditUser/EditUserPage.js';
 
 
