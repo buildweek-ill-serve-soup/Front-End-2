@@ -32,12 +32,9 @@ class UsersList extends React.Component{
 UsersList.propTypes={
     allUsers: PropTypes.func.isRequired,
 }
-function mapStateToProps(state){
-    const {users}=state
-    return{usersList:state.name}
-}
 
 
-export default connect(mapStateToProps)(UsersList);
+
+export default UsersList;
 
 

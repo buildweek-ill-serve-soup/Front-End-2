@@ -1,6 +1,6 @@
 import React from 'react';
-import{connect}from'react-redux';
-import * as actionCreators from '../../actions/index.js';
+
+
 
 
 class Home extends React.Component{
@@ -11,9 +11,9 @@ class Home extends React.Component{
             
             <div className="Wrap">
                 
-                {}
+                
                 <div className="Inventory">
-                <button onClick={()=>{this.props.handleClick()}}>show inventory</button>
+                
                 </div>
             </div>
         )

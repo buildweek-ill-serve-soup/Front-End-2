@@ -26,7 +26,7 @@ class SignupForm extends React.Component{
     onSubmit(e){
         this.setState({errors:{}});
         e.preventDefault();
-        
+        console.log(this.props);
         this.props.userSignupRequest(this.state).then(
             ()=>{
                 
@@ -83,7 +83,5 @@ class SignupForm extends React.Component{
 SignupForm.propTypes={
     userSignupRequest: PropTypes.func.isRequired,
 }
-SignupForm.contextType={
-    router:PropTypes.object.isRequired
-}
+
 export default SignupForm;

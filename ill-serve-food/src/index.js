@@ -8,14 +8,15 @@ import jwt from 'jsonwebtoken';
 
 
 
-import reducers from './reducers/index.js';
+import  reducers from './reducers/';
 import App from './App.js';
 import setAuthorizationToken from './utils/setAuthorizationToken.js';
 import { setCurrentUser } from './actions/authActions.js';
-
+import authReducer from './reducers/authReducer';
 
 const store=createStore(
   reducers,applyMiddleware(thunk)
+  
 );
 if(localStorage.jwtToken){
   setAuthorizationToken(localStorage.jwtToken);
