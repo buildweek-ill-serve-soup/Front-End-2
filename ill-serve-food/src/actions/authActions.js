@@ -6,7 +6,7 @@ import { SET_CURRENT_USER } from "../actions/index.js";
 export function setCurrentUser(user){
     return{
         type:SET_CURRENT_USER,
-        headers:[],
+        
         user
     }
 }
@@ -18,7 +18,7 @@ export function login(data){
             const token=res.data.token;
             localStorage.setItem('jwtToken',token);
             setAuthorizationToken(token);
-            let headers={Authorizaton:`Bearer${token}`,headers}
+            let headers={Authorizaton:`Bearer${token}`}
             dispatch(setCurrentUser(jwt.decode(token)));
     }) 
         

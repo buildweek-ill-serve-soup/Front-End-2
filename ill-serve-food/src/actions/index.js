@@ -23,7 +23,6 @@ export const CREATE_DATA='CREATE_DATA';
 export const ERR='ERR';
 export const SHOW_INVENTORY='SHOW_INVENTORY';
 
-const URL='https://kitchen-soup-backend.herokuapp.com'
 //get all inventory 'still need to set up token'
 export const getInventory=()=>dispatch=>{
   dispatch({type:GETTING_DATA});
