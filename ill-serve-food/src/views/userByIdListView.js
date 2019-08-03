@@ -2,7 +2,7 @@ import React from 'react';
 import{connect}from 'react-redux';
 
 import UserList from '../components/AllUsers/UserList.js';
-import {getUsersById}from'../actions/index.js';
+import {userById}from'../actions/userByIdAction';
 
 class UserByIdListView extends React.Component{
     componentDidMount(){
@@ -23,10 +23,10 @@ class UserByIdListView extends React.Component{
 const mapStateToProps=state=>{
     
     return{
-        data:state.userByIdReducer.data,
-        fetching:state.userByIdReducer.fetching,
+        data:state.data,
+        fetching:state.fetching,
         
     }
    
 }
-export default connect(mapStateToProps,{getUsersById})(UserByIdListView);
+export default connect(mapStateToProps,{userById})(UserByIdListView);

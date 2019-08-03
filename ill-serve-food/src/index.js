@@ -8,7 +8,7 @@ import jwt from 'jsonwebtoken';
 
 
 
-import  reducers from './reducers/';
+import  reducers from './reducers';
 import App from './App.js';
 import setAuthorizationToken from './utils/setAuthorizationToken.js';
 import { setCurrentUser } from './actions/authActions.js';

@@ -22,7 +22,7 @@ class SignupForm extends React.Component{
         this.setState({[e.target.name]:e.target.value})
     }
 
-    //submit user function ERR 500 
+    //submit user function 
     onSubmit(e){
         this.setState({errors:{}});
         e.preventDefault();

@@ -22,7 +22,7 @@ class LoginForm extends React.Component{
         
         this.props.login(this.state).then(
             ()=>{
-                
+               this.context.router.push(`/${this.props.user.id}`) 
                 
             },
             ({data})=>this.setState({errors:data})

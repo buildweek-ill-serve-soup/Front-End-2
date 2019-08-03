@@ -10,7 +10,7 @@ class UserByIdForm extends React.Component{
             password:'',
             role:'',
             email:'',
-            userId:'',
+            userById:'',
             errors:{}
         }
         this.onChange=this.onChange.bind(this);
@@ -23,7 +23,7 @@ class UserByIdForm extends React.Component{
         this.setState({errors:{}});
         e.preventDefault();
         
-        this.props.userId(this.state).then(
+        this.props.userById(this.state).then(
             ()=>{
                 
                 
@@ -54,7 +54,7 @@ class UserByIdForm extends React.Component{
     }
 }
 UserByIdForm.propTypes={
-    userId: PropTypes.func.isRequired,
+    userById: PropTypes.func.isRequired,
 }
 
 export default UserByIdForm;
