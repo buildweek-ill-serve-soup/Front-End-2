@@ -2,28 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Users from './Users';
+import{allUsers}from'../../actions/allUsersAction';
 
 
 class UsersList extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-            name:'',
-            email:'',
-            users:{},
-            errors:{}
-        }
+  render(){
+        const{allUsers}=this.props
         
-    }
-      
-   
-
-    render(){
         return(
            
                
            <div>
-           <Users allUsers={this.state.name} />;
+           <Users allUsers={allUsers} />;
             </div>
             
         )
@@ -31,10 +21,12 @@ class UsersList extends React.Component{
 }
 UsersList.propTypes={
     allUsers: PropTypes.func.isRequired,
+    users: PropTypes.object.isRequired
 }
 
 
 
-export default UsersList;
+
+export default connect(null,{allUsers})(UsersList);
 
 

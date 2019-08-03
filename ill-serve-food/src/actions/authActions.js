@@ -18,7 +18,7 @@ export function login(data){
             const token=res.data.token;
             localStorage.setItem('jwtToken',token);
             setAuthorizationToken(token);
-            let headers={Authorizaton:`Bearer${token}`}
+            let headers={Authorizaton:`Bearer${token}`,headers}
             dispatch(setCurrentUser(jwt.decode(token)));
     }) 
         

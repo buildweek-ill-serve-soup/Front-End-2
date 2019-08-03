@@ -1,0 +1,27 @@
+.WholeNav{
+    display:flex;
+    justify-content: space-between;
+    max-width:800px;
+    width:100%;
+    padding-left:15%;
+}
+.NavContainer{
+    padding-left:4%;
+    padding-right:4%;
+    padding-top:2%;
+    padding-bottom:2%;
+    border:1px solid black;
+    box-shadow:3px 3px 3px grey;
+    border-radius:10px;
+}
+.NavContainer:Hover{
+    border:3px solid black;
+}
+.NavContainer:active{
+    background-color:beige;
+}
+.Nav{
+    font-size:45px;
+    text-decoration: none;
+    color:black;
+}

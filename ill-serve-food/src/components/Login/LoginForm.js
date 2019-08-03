@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styling/LoginForm.css';
 
 
 class LoginForm extends React.Component{
@@ -33,8 +34,8 @@ class LoginForm extends React.Component{
     render(){
         return(
             <form onSubmit={this.onSubmit}>
-               <h1>Login</h1>
-               <input 
+               <h1 className="Login">Welcome Back!</h1>
+               <div className='Form'><input 
                         value={this.state.name}
                         onChange={this.onChange}
                         placeholder='Username'
@@ -46,6 +47,7 @@ class LoginForm extends React.Component{
                         placeholder='Password'
                         type="text"name='password'
                         className='form-control'/>
+                        </div>
                 <div>
                     <button>
                         Login

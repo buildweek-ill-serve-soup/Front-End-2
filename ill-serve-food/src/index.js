@@ -15,7 +15,7 @@ import { setCurrentUser } from './actions/authActions.js';
 import authReducer from './reducers/authReducer';
 
 const store=createStore(
-  reducers,applyMiddleware(thunk)
+  (authReducer),applyMiddleware(thunk)
   
 );
 if(localStorage.jwtToken){

@@ -7,12 +7,22 @@ import{allUsers}from'../../actions/allUsersAction';
 
 
 class Users extends React.Component{
+    
+    constructor(props){
+        super(props);
+        this.state={
+            name:'',
+            email:'',
+            role:'',
+            errors:{}
+        }
+    }
     render(){
-        const{allUsers}=this.props
+        
         return(
             <div className='allUsers'>
-                <UserList allUsers={allUsers}/>
-               
+                All Users
+               {this.props.name}
             </div>
         )
     }
@@ -20,4 +30,4 @@ class Users extends React.Component{
 Users.propTypes={
     allUsers: PropTypes.func.isRequired
 }
-export default connect(null,{allUsers})(Users);
+export default Users;

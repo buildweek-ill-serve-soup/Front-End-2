@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import'../styling/SignupForm.css';
 
 
 
@@ -41,7 +41,7 @@ class SignupForm extends React.Component{
         return(
         <form onSubmit={this.onSubmit}>
                 <div>
-                    <h1>Join Now!</h1>
+                    <h1 className="Join">Join Now!</h1>
                 </div>
                 <div className="form-group">
                    <input 
@@ -70,7 +70,7 @@ class SignupForm extends React.Component{
                         className='form-control'/>
                     
                 </div>
-                <div className='form-group'>
+                <div className='button'>
                         <button >
                             Sign Up
                         </button>
